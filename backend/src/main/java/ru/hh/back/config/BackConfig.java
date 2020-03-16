@@ -4,11 +4,6 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Import;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
-//import ru.hh.back.entity.CompanyEntity;
-//import ru.hh.back.entity.NegotiationEntity;
-//import ru.hh.back.entity.ResumeEntity;
-//import ru.hh.back.entity.UserEntity;
-//import ru.hh.back.entity.VacancyEntity;
 import ru.hh.nab.common.properties.FileSettings;
 import ru.hh.nab.datasource.DataSourceFactory;
 import ru.hh.nab.hibernate.MappingConfig;
@@ -30,7 +25,6 @@ import javax.sql.DataSource;
 public class BackConfig {
         @Bean
         public MappingConfig mappingConfig() {
-                //return new MappingConfig(CompanyEntity.class, NegotiationEntity.class, ResumeEntity.class, UserEntity.class, VacancyEntity.class);
                 var mappingConfig = new MappingConfig();
                 mappingConfig.addPackagesToScan("ru.hh.back.entity");
                 return mappingConfig;
