@@ -1,5 +1,6 @@
 package ru.hh.back.service;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import ru.hh.back.dao.ResumeDao;
@@ -12,7 +13,7 @@ import java.util.stream.Collectors;
 @Service
 public class ResumeService {
     private ResumeDao resumeDao;
-
+    @Autowired
     public ResumeService(ResumeDao resumeDao) {
         this.resumeDao = resumeDao;
     }

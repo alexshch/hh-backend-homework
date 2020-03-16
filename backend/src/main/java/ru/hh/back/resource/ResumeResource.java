@@ -1,5 +1,7 @@
 package ru.hh.back.resource;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 import ru.hh.back.dto.ResumeRequestDto;
 import ru.hh.back.service.ResumeService;
 
@@ -11,11 +13,12 @@ import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 
+@Service
 @Path("/resume")
 public class ResumeResource {
 
     private ResumeService resumeService;
-
+    @Autowired
     public ResumeResource(ResumeService resumeDao) {
         this.resumeService = resumeDao;
     }

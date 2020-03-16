@@ -1,5 +1,6 @@
 package ru.hh.back.service;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import ru.hh.back.dao.CompanyDao;
@@ -11,6 +12,7 @@ import java.util.stream.Collectors;
 @Service
 public class CompanyService {
     CompanyDao companyDao;
+    @Autowired
     public CompanyService(CompanyDao companyDao){
         this.companyDao = companyDao;
     }

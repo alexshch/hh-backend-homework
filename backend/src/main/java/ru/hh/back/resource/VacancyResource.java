@@ -1,5 +1,7 @@
 package ru.hh.back.resource;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 import ru.hh.back.dto.VacancyRequestDto;
 import ru.hh.back.service.NegotiationService;
 import ru.hh.back.service.VacancyService;
@@ -13,11 +15,13 @@ import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 
+@Service
 @Path("/vacancy")
 public class VacancyResource {
     private VacancyService vacancyService;
     private NegotiationService negotiationService;
 
+    @Autowired
     public VacancyResource(VacancyService vacancyService, NegotiationService negotiationDao) {
         this.vacancyService = vacancyService;
         this.negotiationService = negotiationDao;

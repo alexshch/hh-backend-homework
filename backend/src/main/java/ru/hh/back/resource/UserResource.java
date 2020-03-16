@@ -1,5 +1,7 @@
 package ru.hh.back.resource;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 import ru.hh.back.dto.UserRequestDto;
 import ru.hh.back.service.UserService;
 
@@ -13,11 +15,12 @@ import javax.ws.rs.QueryParam;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 
+@Service
 @Path("/user")
 public class UserResource {
     private final UserService userService;
 
-    //@Inject
+    @Autowired
     public UserResource(UserService userDao) {
         this.userService = userDao;
     }
